@@ -1,5 +1,6 @@
 import { useState } from "react";
 import type { User } from "../types/User";
+import type { FormErrors } from "../types/FormErrors";
 import { validate } from "../utils/validate";
 
 const Form = () => {
@@ -7,11 +8,14 @@ const Form = () => {
   const [email, setEmail] = useState("");
   const [agree, setAgree] = useState(false);
 
-  const [errors, setErrors] = useState<User | null>(null);
+  const [success, setSuccess] = useState(false);
+
+  const [errors, setErrors] = useState<FormErrors | null>(null);
 
   const handleSubmit = (e: React.SubmitEvent<HTMLFormElement>) => {
     e.preventDefault();
 
+    setSuccess(false);
     setErrors(null);
 
     const data: User = {
@@ -22,8 +26,6 @@ const Form = () => {
 
     const validateErrors = validate(data);
 
-    console.log(data, validateErrors);
-
     if (Object.keys(validateErrors).length > 0) {
       setErrors(validateErrors);
       return;
@@ -33,7 +35,7 @@ const Form = () => {
     setEmail("");
     setAgree(false);
 
-    alert("Obrigado por se inscrever");
+    setSuccess(true);
   };
 
   return (
@@ -48,7 +50,10 @@ const Form = () => {
           placeholder="Digite seu nome"
           className="rounded-lg py-2 px-2 text-sm placeholder:text-sm placeholder:text-stone-400"
           value={name}
-          onChange={(e) => setName(e.target.value)}
+          onChange={(e) => {
+            setName(e.target.value);
+            setSuccess(false);
+          }}
         />
         {errors?.name && (
           <small className="text-xs text-red-500 mt-1">{errors?.name}</small>
@@ -64,7 +69,10 @@ const Form = () => {
           placeholder="Insira seu melhor e-mail"
           className="rounded-lg py-2 px-2 text-sm placeholder:text-sm placeholder:text-stone-400"
           value={email}
-          onChange={(e) => setEmail(e.target.value)}
+          onChange={(e) => {
+            setEmail(e.target.value);
+            setSuccess(false);
+          }}
         />
         {errors?.email && (
           <small className="text-xs text-red-500 mt-1">{errors?.email}</small>
@@ -78,7 +86,10 @@ const Form = () => {
           <input
             type="checkbox"
             checked={agree}
-            onChange={(e) => setAgree(e.target.checked)}
+            onChange={(e) => {
+              setAgree(e.target.checked);
+              setSuccess(false);
+            }}
           />
 
           <label className="text-sm" htmlFor="agree">
@@ -86,7 +97,7 @@ const Form = () => {
           </label>
         </div>
         {errors?.agree && (
-          <small className="text-xs text-red-500 mt-">{errors?.agree}</small>
+          <small className="text-xs text-red-500 mt-1">{errors?.agree}</small>
         )}
       </div>
       <button
@@ -95,6 +106,11 @@ const Form = () => {
       >
         Cadastrar
       </button>
+      {success && (
+        <p className="text-green-600 text-sm text-center">
+          Obrigado por se inscrever!
+        </p>
+      )}
     </form>
   );
 };
