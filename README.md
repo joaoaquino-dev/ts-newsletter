@@ -53,8 +53,10 @@ git clone https://github.com/joaoaquino-dev/ts-newsletter.git
 cd ts-newsletter
 npm install
 npm run dev
+```
 
-💡 Diferenciais
+## 💡 Diferenciais
+
 Separação entre lógica e UI
 Código limpo e reutilizável
 Uso correto de TypeScript
@@ -63,4 +65,7 @@ Uso correto de TypeScript
 
 João Aquino
 https://github.com/joaoaquino-dev
+
+```
+
 ```
