@@ -6,6 +6,7 @@ const Form = () => {
           Nome
         </label>
         <input
+          id="name"
           type="text"
           placeholder="Digite seu nome"
           className="rounded-lg py-2 px-2 text-sm placeholder:text-sm placeholder:text-stone-400"
@@ -16,6 +17,7 @@ const Form = () => {
           E-mail
         </label>
         <input
+          id="email"
           type="email"
           placeholder="Insira seu melhor e-mail"
           className="rounded-lg py-2 px-2 text-sm placeholder:text-sm placeholder:text-stone-400"
