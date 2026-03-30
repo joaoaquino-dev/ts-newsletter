@@ -1,45 +1,78 @@
 🚀 TS Newsletter
-Uma aplicação de inscrição em Newsletter desenvolvida com React 19 e TypeScript, focada em validação de formulários e manipulação de estados. O projeto aplica conceitos de Engenharia de Software como separação de responsabilidades (SRP) e tipagem rigorosa de dados.
 
-🛠️ Tecnologias e Conceitos
-React 19: Uso de Hooks (useState) e tratamento de eventos modernos (SubmitEvent).
+Aplicação de inscrição em newsletter desenvolvida com React 19 + TypeScript, com foco em validação robusta de formulários, tipagem segura e boas práticas de engenharia de software.
 
-TypeScript: Definição de interfaces (User.ts) e uso de type-only imports para otimização.
+O projeto demonstra organização de código, separação de responsabilidades e uma base sólida para aplicações front-end escaláveis.
 
-Tailwind CSS: Estilização utilitária e layout responsivo.
+🧠 Objetivo do Projeto
 
-Vite: Ambiente de desenvolvimento de alta performance.
+Este projeto foi criado para praticar:
 
-📋 Funcionalidades Técnicas
-Validação Customizada: Lógica de validação isolada em utils/validate.ts, retornando mensagens de erro específicas para cada campo.
-
-Gestão de Erros: Exibição condicional de mensagens de erro abaixo dos inputs com tipagem segura.
-
-Persistência de Dados: Captura de dados em tempo real e reset de formulário após envio bem-sucedido.
-
-Segurança de Tipos: Contrato de dados único (User) compartilhado entre componente e utilitários.
-
-📂 Organização do Código
-O projeto segue uma estrutura modular para facilitar a manutenção:
-
-src/components/Form.tsx: Componente principal de interface e controle de estado.
-
-src/types/User.ts: Definição do contrato de dados da aplicação.
-
-src/utils/validate.ts: Lógica de validação desacoplada da interface.
-
+Manipulação de formulários com React
+Validação de dados desacoplada da UI
+Tipagem forte com TypeScript
+Organização de código seguindo princípios como SRP (Single Responsibility Principle)
+🛠️ Tecnologias Utilizadas
+React 19 – Hooks modernos e manipulação de eventos
+TypeScript – Tipagem estática e segurança de dados
+Tailwind CSS – Estilização rápida e responsiva
+Vite – Build tool moderna e performática
+⚙️ Funcionalidades
+✅ Validação de Formulário
+Validação customizada separada da interface
+Retorno de erros específicos por campo
+Código reutilizável (utils/validate.ts)
+⚠️ Tratamento de Erros
+Exibição dinâmica de mensagens abaixo dos inputs
+Tipagem segura para evitar erros em runtime
+🔄 Gerenciamento de Estado
+Uso de useState para controle de inputs
+Atualização em tempo real dos dados
+💾 Persistência Temporária
+Dados capturados durante o preenchimento
+Reset automático após envio bem-sucedido
+🔐 Segurança de Tipos
+Interface única (User) compartilhada entre:
+Componentes
+Validação
+Lógica da aplicação
+🧱 Estrutura do Projeto
+src/
+├── components/
+│   └── Form.tsx        # Interface e controle do formulário
+├── types/
+│   └── User.ts         # Contrato de dados
+├── utils/
+│   └── validate.ts     # Regras de validação
 🚀 Como Executar
+
 Clone o repositório:
 
-Bash
 git clone https://github.com/joaoaquino-dev/ts-newsletter.git
+
+Acesse a pasta:
+
+cd ts-newsletter
+
 Instale as dependências:
 
-Bash
 npm install
-Rode o projeto:
 
-Bash
+Execute o projeto:
+
 npm run dev
-👤 Autor
+💡 Diferenciais do Projeto
+Código limpo e organizado
+Separação clara entre lógica e interface
+Aplicação de boas práticas reais de mercado
+Uso consistente de TypeScript
+📈 Possíveis Melhorias Futuras
+Integração com API (ex: envio real de newsletter)
+Toasts de feedback (sucesso/erro)
+Testes unitários (Jest ou Vitest)
+Acessibilidade (ARIA)
+Máscaras de input
+👨‍💻 Autor
+
 João Aquino
+🔗 https://github.com/joaoaquino-dev
