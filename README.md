@@ -36,13 +36,16 @@ Praticar conceitos essenciais de front-end moderno:
 
 ## 📂 Estrutura
 
+```bash
 src/
 ├── components/
-│ └── Form.tsx
+│   └── Form.tsx
 ├── types/
-│ └── User.ts
+│   └── User.ts
 └── utils/
-└── validate.ts
+    └── validate.ts
+
+```
 
 ---
 
@@ -59,9 +62,10 @@ npm run dev
 
 ## 💡 Diferenciais
 
-Separação entre lógica e UI
-Código limpo e reutilizável
-Uso correto de TypeScript
+- Separação entre lógica e UI
+- Código limpo e reutilizável
+- Uso correto de TypeScript
+- Estrutura modular e escalável
 
 ---
 
