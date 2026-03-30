@@ -1,11 +1,10 @@
 import type { User } from "../types/User";
+import type { FormErrors } from "../types/FormErrors";
 
-type Error = {
-  [key: string]: string;
-};
+export const validate = (data: User): FormErrors => {
+  const errors: FormErrors = {};
 
-export const validate = (data: User) => {
-  const errors: Error = {};
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
   if (!data.name) {
     errors["name"] = "O nome é obrigatório";
@@ -13,6 +12,8 @@ export const validate = (data: User) => {
 
   if (!data.email) {
     errors["email"] = "O email é obrigatório";
+  } else if (!emailRegex.test(data.email)) {
+    errors["email"] = "Digite um e-mail válido";
   }
 
   if (!data.agree) {
