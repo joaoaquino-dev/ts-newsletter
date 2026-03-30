@@ -55,17 +55,17 @@ npm install
 npm run dev
 ```
 
+---
+
 ## 💡 Diferenciais
 
 Separação entre lógica e UI
 Código limpo e reutilizável
 Uso correto de TypeScript
 
-👨‍💻 Autor
+---
+
+## 👨‍💻 Autor
 
 João Aquino
 https://github.com/joaoaquino-dev
-
-```
-
-```
